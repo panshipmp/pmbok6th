@@ -5,7 +5,7 @@
 
 ### 联系方式
 加微信群二维码
-><img src="/pics/README/001-磐石如丝微信二维码.png" width="140" height="140" align=left></img>
+> <img src="/pics/README/001-磐石如丝微信二维码.png" width="140" height="140" align=center></img>
 
 ### 数据库涉及思路
 
