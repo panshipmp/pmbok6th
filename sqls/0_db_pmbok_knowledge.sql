@@ -1953,26 +1953,3 @@ INSERT INTO `t_tool_category` VALUES ('3', '数据分析技术', '', '');
 INSERT INTO `t_tool_category` VALUES ('4', '决策技术', '', '');
 INSERT INTO `t_tool_category` VALUES ('5', '数据表现技术', '', '');
 INSERT INTO `t_tool_category` VALUES ('6', '沟通技能', '', '');
-
--- ----------------------------
--- Procedure structure for `test_aaa`
--- ----------------------------
-DROP PROCEDURE IF EXISTS `test_aaa`;
-DELIMITER ;;
-CREATE DEFINER=`dj_online`@`192.168.104.93` PROCEDURE `test_aaa`(IN tablename varchar(56))
-BEGIN
-DECLARE table_name varchar(64);
-DECLARE sql_test VARCHAR(250);
-DECLARE result VARCHAR(250);
-DECLARE cond VARCHAR(250);
-DECLARE maps_cursor CURSOR FOR SELECT  map_id FROM t_rpg_ladder_info;
-SET cond = 'a@163.com';
-SET table_name='t_account';
-SET @sql_test=concat('select account ' ,'from ',table_name,' where account = "a@163.com";');
-SELECT * from t_account WHERE account=cond;
-SELECT @sql_test;
-PREPARE stmt FROM @sql_test;
-EXECUTE stmt;
-END
-;;
-DELIMITER ;

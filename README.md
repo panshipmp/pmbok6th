@@ -7,6 +7,9 @@
 加微信群二维码
 ><img src="/pics/README/001-磐石如丝微信二维码.png" width="140" height="140" align=left></img>
 
+### 数据库涉及思路
+
+
 ### TODOLIST
 - [X] 选择使用 mysql 数据库来实现 PMBOK 第六版本的应用数据库；
 - [X] 整理和分析 PMBOK 第六版，并把相关的知识点数据库化；
