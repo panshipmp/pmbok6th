@@ -264,6 +264,7 @@ CREATE TABLE `t_charts_info` (
   `chart_info` varchar(256) NOT NULL,
   `chart_extra_info` varchar(256) NOT NULL,
   `chart_url` varchar(128) NOT NULL,
+  `chart_url_github` varchar(256) NOT NULL,
   `update_timstamp` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`chart_id`),
   UNIQUE KEY `key` (`chart_idx`) USING BTREE,
@@ -273,73 +274,73 @@ CREATE TABLE `t_charts_info` (
 -- ----------------------------
 -- Records of t_charts_info
 -- ----------------------------
-INSERT INTO `t_charts_info` VALUES ('1', '表1-1', '促成项目创建的因素示例', '9', '展示了如何把影响项目启动背景的一些具体的因素归入一个或多个基本因素类别中。', '', 'https://i.imgur.com/SqPeY2y.png', '2018-09-23 18:49:27');
-INSERT INTO `t_charts_info` VALUES ('2', '表1-2', '项目、项目集、项目组合管理的比较概述', '13', '项目集和项目管理的重点在于以“正确”的方式开展项目集和项目；项目组合管理则注重于开展“正确”的项目集和项目。', '', 'https://i.imgur.com/OnqLDdR.png', '2018-09-23 18:56:58');
-INSERT INTO `t_charts_info` VALUES ('3', '表1-3', 'PMBOK® 指南关键组成部分的描述', '18', '简单描述了 PMBOK 第六版关键组成部分。', '', 'https://i.imgur.com/e5c4vMY.png', '2018-09-23 18:58:27');
-INSERT INTO `t_charts_info` VALUES ('4', '表1-4', '项目管理过程组与知识领域', '25', '描述了5大过程组、10大知识领域、49个过程的对应关系。', '', 'https://i.imgur.com/8eYzhD3.png', '2018-09-23 18:59:13');
-INSERT INTO `t_charts_info` VALUES ('5', '表1-5', '项目商业文件', '29', '在整个项目生命周期中，项目经理需要确保项目管理方法紧扣的商业文件包括的内容，以保证项目满足商业需求。', '', 'https://i.imgur.com/wP9scHJ.png', '2018-09-23 19:01:25');
-INSERT INTO `t_charts_info` VALUES ('6', '表2-1', '组织结构对项目的影响', '47', '组织结构的形式或类型是多种多样的。这个表比较了几种组织结构类型及其对项目的影响。', '', 'https://i.imgur.com/fc2c4pR.png', '2018-09-23 19:02:55');
-INSERT INTO `t_charts_info` VALUES ('7', '表3-1', '团队管理与团队领导力之比较', '64', '“管理”更接近于运用一系列已知的预期行为指示另一个人从一个位置到另一个位置。相反，“领导力”指通过讨论或辩论与他人合作，带领他们从一个位置到另一个位置。表从几个重\r\n要的层面对管理和领导力进行比较。', '', 'https://i.imgur.com/oHvNRiC.png', '2018-09-23 22:00:24');
-INSERT INTO `t_charts_info` VALUES ('8', '表4-1', '项目管理计划和项目文件', '89', '18个项目管理计划和33个项目文件的内容。需要记住的是：项目文件中，没有采购相关的文件，如协议与采购文档。采购一般由组织的采购部门负责。', '', 'https://i.imgur.com/xHQzFON.png', '2018-09-23 19:06:00');
-INSERT INTO `t_charts_info` VALUES ('9', '表5-1', '项目章程与项目范围说明书的内容', '155', '项目章程和项目范围说明书的内容存在一定程度的重叠，但它们的详细程度完全不同。项目章程包含高层级的信息，而项目范围说明书则是对范围组成部分的详细描述，这些组成部分需要在项目过程中渐进明细。表显示了这两个文件的一些关键内容。', '', 'https://i.imgur.com/46X7CGS.png', '2018-09-23 19:21:00');
-INSERT INTO `t_charts_info` VALUES ('10', '表7-1', '挣值计算汇总表', '267', '挣值分析 (EVA)。挣值分析将实际进度和成本绩效与绩效测量基准进行比较。EVM把范围基准、成本基准和进度基准整合起来，形成绩效测量基准。它针对每个工作包和控制账户，计算并监测以下三个关键指标：PV，计划价值；EV，挣值；AC，实际成本。', '挣值管理常用公式（PV，计划价值；EV，挣值；AC，实际成本）：\r\n1. SV  = EV-PV，SV，进度偏差：SV=0，按进度计划进行；SV>0，比进度计划提前；SV<0，比进度计划滞后。\r\n2. SPI = EV/PV，CV，成本偏差：CV=0，按计划成本完成；CV>0，低于计划成本；CV<0，超过计划成本。\r\n3. CV  = EV-AC，SPI，进度绩效指数：SPI=1，进度与计划相符；SPI>1，进度超前；SPI<1，进度落后。\r\n4. CPI = EV/AC，CPI，成本绩效指数：CPI=1', 'https://i.imgur.com/cL2CVvB.png', '2018-09-23 19:23:11');
-INSERT INTO `t_charts_info` VALUES ('11', '表11-1', '概率和影响定义示例', '407', '针对三个项目目标提供了概率和影响定义的示例。', '定概率和影响级别的数量，更多级别（通常为五级）对应于更详细的风险管理方法，更少级别（通常为三级）对应于更简单的方法。', 'https://i.imgur.com/wChaPhj.png', '2018-09-23 19:25:09');
-INSERT INTO `t_charts_info` VALUES ('12', '表12-1', '采购文件比较', '481', '列出了采购中常用的文件类型及其部分内容。（采购文件，也就是采购文档）', '鉴于采购的法律性质，不应把次表的内容看成规定性描述，而只应该把它们看成关于所需文件的类型和内容的总体大纲，用于指导实施采购工作。组织、环境和法律规定会决定项目具体需要的文件类型和内容。', 'https://i.imgur.com/QysN2EK.png', '2018-09-23 19:27:22');
-INSERT INTO `t_charts_info` VALUES ('13', '图1-1', '组织通过项目进行状态转换', '6', '从商业角度来看，项目旨在推动组织从一个状态转到另一个状态，从而达成特定目标。', '', 'https://i.imgur.com/TPHSrsU.png', '2018-09-23 19:29:37');
-INSERT INTO `t_charts_info` VALUES ('14', '图1-2', '项目启动背景', '8', '项目启动背景大致分为四类：1. 符合法规、法律或社会要求；2. 满足相关方的要求或需求；3. 执行、变更业务或技术战略；4. 创造、改进或修复产品、过程或服务。', '', 'https://i.imgur.com/uHeSwFl.png', '2018-09-23 19:31:01');
-INSERT INTO `t_charts_info` VALUES ('15', '图1-3', '项目组合、项目集、项目和运营', '12', '展示了项目组合、项目集、项目和运营在特定情况下如何关联的。', '切记：项目集不包括运营活动。', 'https://i.imgur.com/D8mId2Z.png', '2018-09-23 19:32:27');
-INSERT INTO `t_charts_info` VALUES ('16', '图1-4', '组织项目管理', '17', '展示了战略、项目组合、项目集、项目和运营相互作用的组织环境。', '应用组织级项目管理 (OPM)：指为实现战略目标而整合项目组合、项目集和项目管理与组织驱动因素的框架。', 'https://i.imgur.com/mrYhiKo.png', '2018-09-23 19:34:42');
-INSERT INTO `t_charts_info` VALUES ('17', '图1-5', 'PMBOK® 指南关键组成部分在项目中的相互关系', '18', '项目生命周期、5大过程组、10大知识领域在项目中的对应关系。', '', 'https://i.imgur.com/pxZt3R3.png', '2018-09-23 19:35:50');
-INSERT INTO `t_charts_info` VALUES ('18', '图1-6', '过程示例：输入、工具与技术和输出', '22', '49个过程的ITTO样例，说明了一个过程的输入、工具、技术和输出的关系以及与其他过程的关系。', '', 'https://i.imgur.com/LkONyAQ.png', '2018-09-23 19:36:37');
-INSERT INTO `t_charts_info` VALUES ('19', '图1-7', '项目数据、信息和报告流向', '27', '项目工作绩效数据、绩效信息信息和绩效信息报告在项目中的流转。', '', 'https://i.imgur.com/K8fvKkL.png', '2018-09-23 19:39:29');
-INSERT INTO `t_charts_info` VALUES ('20', '图1-8', '需求评估与关键业务/项目文件的相互关系', '30', '需求评估与五大过程组、项目文件（商业论证、项目章程和项目管理计划）的相互流转关系。', '', 'https://i.imgur.com/UTulClX.png', '2018-09-23 19:41:18');
-INSERT INTO `t_charts_info` VALUES ('21', '图2-1', '项目影响', '37', '项目的开展如何通过组织过程资产和事业环境因素去影响公司战略的。', '', 'https://i.imgur.com/UwvrKbE.png', '2018-09-23 19:42:22');
-INSERT INTO `t_charts_info` VALUES ('22', '图3-1', '项目经理的影响力范围示例', '53', '项目经理影响力的范围是涉及项目的所有相关方的，这个图也就是项目相关方的图。', '', 'https://i.imgur.com/ByFB9wS.png', '2018-09-23 19:45:24');
-INSERT INTO `t_charts_info` VALUES ('23', '图3-2', 'PMI 人才三角®', '57', '项目经理的人才技能需求，人才三角重点关注三个关键技能组合：技术项目管理、领导力、战略和商务管理。', '人才三角重点关注三个关键技能组合：\r\n1. 技术项目管理。与项目、项目集和项目组合管理特定领域相关的知识、技能和行为，即角色履行的技术方面。\r\n2. 领导力。指导、激励和带领团队所需的知识、技能和行为，可帮助组织达成商业目标。\r\n3. 战略和商务管理。关于行业和组织的知识和专业技能，有助于提高绩效并取得更好的业务成果。', 'https://i.imgur.com/jQ3TF0w.png', '2018-09-23 19:48:42');
-INSERT INTO `t_charts_info` VALUES ('24', '图5-6', '系统交互图', '146', '系统交互图是范围模型的一个例子，它是对产品范围的可视化描绘，显示业务系统（过程、设备、计算机系统等）及其与人和其他系统（行动者）之间的交互方式。', '系统交互图显示了业务系统的输入、输入提供者、业务系统的输出和输出接收者。', 'https://i.imgur.com/Q6PUqE2.png', '2018-09-23 19:49:53');
-INSERT INTO `t_charts_info` VALUES ('25', '图5-7', '需求跟踪矩阵示例', '149', '需求跟踪矩阵示例，其中列有相关的需求属性。', '需求跟踪矩阵是描述一个需求从产生到完成的过程，是需求溯源和跟踪的依据。', 'https://i.imgur.com/m52AX3A.png', '2018-09-23 19:52:03');
-INSERT INTO `t_charts_info` VALUES ('26', '图5-12', '分解到工作包的WBS 示例', '158', 'WBS示例：显示了某工作分解结构的一部分，其中若干分支已经向下分解到工作包层次。', '', 'https://i.imgur.com/LYbgddg.png', '2018-09-23 19:53:33');
-INSERT INTO `t_charts_info` VALUES ('27', '图5-13', 'WBS 示例：以阶段作为第二层', '159', 'WBS示例：u以项目生命周期的各阶段作为分解的第二层，把产品和项目可交付成果放在第三层。', '', 'https://i.imgur.com/2Mtn5QD.png', '2018-09-23 19:54:13');
-INSERT INTO `t_charts_info` VALUES ('28', '图5-14', 'WBS 示例：以主要可交付成果作为第二层', '160', 'WBS示例：以主要可交付成果作为分解的第二层。', '', 'https://i.imgur.com/4ToIMWS.png', '2018-09-23 19:53:49');
-INSERT INTO `t_charts_info` VALUES ('29', '图6-2', '进度规划工作概述', '176', '进度计划工作的概览，展示如何结合进度计划编制方法、编制工具及项目进度管理各过程的输出来创建进度模型。', '', 'https://i.imgur.com/cAGqogF.png', '2018-09-23 19:57:55');
-INSERT INTO `t_charts_info` VALUES ('30', '图6-9', '紧前关系绘图法（PDM）的活动关系类型', '190', '紧前关系绘图法（PDM）的活动关系类型：完成到开始（FS）、完成到完成（FF）、开始到开始（SS）、开始到完成（SF）。', '', 'https://i.imgur.com/BcR1nIM.png', '2018-09-23 20:01:13');
-INSERT INTO `t_charts_info` VALUES ('31', '图6-10', '提前量和滞后量示例', '192', '提前量和滞后量：提前量是相对于紧前活动，紧后活动可以提前的时间量；滞后量是相对于紧前活动，紧后活动需要推迟的时间量。', '', 'https://i.imgur.com/avUdC2A.png', '2018-09-23 20:02:44');
-INSERT INTO `t_charts_info` VALUES ('32', '图6-11', '项目进度网络图', '193', '项目进度网络图是表示项目进度活动之间的逻辑关系（也叫依赖关系）的图形。', '', 'https://i.imgur.com/xiiLYI8.png', '2018-09-23 20:03:54');
-INSERT INTO `t_charts_info` VALUES ('33', '图6-16', '关键路径法示例', '211', '关键路径法是在不考虑任何资源限制的情况下对估算出的项目最短工期。', '', 'https://i.imgur.com/ek851DQ.png', '2018-09-23 20:05:51');
-INSERT INTO `t_charts_info` VALUES ('34', '图6-17', '资源平衡', '212', '资源平衡，为了在资源需求与资源供给之间取得平衡，根据资源制约因素对开始日期和完成日期进行调整的一种技术，通常改变关键路径。', '', 'https://i.imgur.com/58KNE3l.png', '2018-09-23 20:07:24');
-INSERT INTO `t_charts_info` VALUES ('35', '图6-18', '目标里程碑的概率分布示例', '214', '显示了一个项目的概率分布，表明实现特定目标日期（即项目完成日期）的可能性。在这个例子中，项目按时或在目标日期，即 5 月 13 日之前完成的概率是 10%，而在 5 月 28 日之前完成的概率是 90%。', '', 'https://i.imgur.com/tDyTqq2.png', '2018-09-23 20:08:14');
-INSERT INTO `t_charts_info` VALUES ('36', '图6-19', '进度压缩技术的比较', '215', '比较了多个进度压缩技术。', '进度压缩技术是指在不缩减项目范围的前提下，缩短或加快进度工期。包括赶工和快速跟进。', 'https://i.imgur.com/qpWn49Y.png', '2018-09-23 20:09:40');
-INSERT INTO `t_charts_info` VALUES ('37', '图6-20', '产品愿景、发布规划和迭代计划之间的关系', '216', '敏捷发布规划下，产品愿景、产品路线图、发布规划和迭代计划之间的关系。', '', 'https://i.imgur.com/B2jgnCv.png', '2018-09-23 20:11:54');
-INSERT INTO `t_charts_info` VALUES ('38', '图6-21', '项目进度计划示例', '219', '一个正在执行的示例项目的进度计划，工作进展是通过截止日期或状态日期表示的，包括：里程碑进度计划，横道图，进度关联横道图。', '', 'https://i.imgur.com/lEJIQTf.png', '2018-09-23 20:13:20');
-INSERT INTO `t_charts_info` VALUES ('39', '图6-24', '迭代燃尽图', '226', '迭代燃尽图，这类图用于追踪迭代未完项中尚待完成的工作。它基于迭代规划中确定的工作，分析与理想燃尽图的偏差。可使用预测趋势线来预测迭代结束时可能出现的偏差，以及在迭代期间应该采取的合理行动。', '', 'https://i.imgur.com/8BIBSB9.png', '2018-09-23 20:14:53');
-INSERT INTO `t_charts_info` VALUES ('40', '图7-8', '项目预算的组成', '255', '预算 = 管理储备 + 成本基准	= 管理储备 + 控制账户	= 管理储备 + （应急储备 + 工作包成本估算 ）	= 管理储备 + （应急储备 + （活动应急储备 + 活动成本估算））。', '', 'https://i.imgur.com/57WduV0.png', '2018-09-23 20:16:01');
-INSERT INTO `t_charts_info` VALUES ('41', '图7-9', '成本基准、支出与资金需求', '255', '展示由于成本基准中的成本估算与进度活动直接关联，可按时间段分配成本基准，得到一条 S 曲线。对于使用挣值管理的项目，成本基准指的是绩效测量基准。', '', 'https://i.imgur.com/zFTgarz.png', '2018-09-23 20:17:46');
-INSERT INTO `t_charts_info` VALUES ('42', '图7-12', '挣值、计划价值和实际成本', '264', '以 S 曲线展示了某个项目的 EV 数据，该项目预算超支且进度落后。', '在挣值分析中，对计划价值、挣值和实际成本这三个参数，既可以分阶段（通常以周或月为单位）进行监督和报告，也可以针对累计值进行监督和报告。', 'https://i.imgur.com/tNmCMyi.png', '2018-09-23 20:19:04');
-INSERT INTO `t_charts_info` VALUES ('43', '图7-13', '完工尚需绩效指数（TCPI）', '268', '完工尚需绩效指数（TCPI）是一种为了实现特定的管理目标，剩余资源的使用必须达到的成本绩效指标，是完成剩余工作所需的成本与剩余预算之比', 'TCPI，其计算公式在图的左下角，用剩余工作（BAC 减去 EV）除以剩余资金（可以是 BAC 减去 AC，或 EAC 减去 AC）。', 'https://i.imgur.com/IBVCv9E.png', '2018-09-23 20:22:06');
-INSERT INTO `t_charts_info` VALUES ('44', '图8-2', '主要项目质量管理过程的相互关系', '273', '概述了项目质量管理过程的主要输入和输出以及这些过程在项目质量管理知识领域中的相互关系。', '', 'https://i.imgur.com/3lYlAEr.png', '2018-09-23 20:22:35');
-INSERT INTO `t_charts_info` VALUES ('45', '图8-5', '质量成本', '283', '质量成本 (COQ) 包括在产品生命周期中为预防不符合要求、为评价产品或服务是否符合要求，以及因未达到要求（返工）而发生的所有成本。失败成本通常分为内部（项目团队发现的）和外部（客户发现的）两类。', '', 'https://i.imgur.com/1TdqX8A.png', '2018-09-23 20:23:12');
-INSERT INTO `t_charts_info` VALUES ('46', '图8-6', 'SIPOC 模型', '285', '展示了其中一个版本的价值链，即 SIPOC（供应商、输入、过程、输出和客户）模型。', '流程图可能有助于了解和估算一个过程的质量成本。', 'https://i.imgur.com/K8ZwlXy.png', '2018-09-23 20:24:23');
-INSERT INTO `t_charts_info` VALUES ('47', '图8-9', '因果图', '294', '因果图，又称“鱼骨图”、“why-why分析图”和“石川图”，将问题陈述的原因分解为离散的分支，有助于识别问题的主要原因或根本原因。', '', 'https://i.imgur.com/vZQsdt9.png', '2018-09-23 20:25:03');
-INSERT INTO `t_charts_info` VALUES ('48', '图8-12', '核查表', '302', '在开展检查以识别缺陷时，用核查表收集属性数据就特别方便，例如关于缺陷数量或后果的数据。', '核查表，又称计数表，用于合理排列各种事项，以便有效地收集关于潜在质量问题的有用数据。', 'https://i.imgur.com/QBdUdAj.png', '2018-09-23 20:25:53');
-INSERT INTO `t_charts_info` VALUES ('49', '图9-4', 'RACI 矩阵示例', '317', '责任分配矩阵的一个具体形式：RACI，以确保任何一项任务都只有一个人负责，从而避免职权不清。', 'RACI（执行、负责、咨询和知情）：A更好的翻译是负责，R是执行或响应。一个活动只有1个A。', 'https://i.imgur.com/ZUdj2Gp.png', '2018-09-23 20:29:03');
-INSERT INTO `t_charts_info` VALUES ('50', '图9-7', '资源分解结构示例', '327', '资源分解结构是资源依类别和类型的层级展现。', '', 'https://i.imgur.com/VpJqAog.png', '2018-09-23 20:29:34');
-INSERT INTO `t_charts_info` VALUES ('51', '图10-4', '适用于跨文化沟通的沟通模型', '373', '沟通模型示例，展示了发送方的当前情绪、知识、背景、个性、文化和偏见会如何影响信息本身及其传递方式。类似地，接收方的当前情绪、知识、背景、个性、文化和偏见也会影响信息的接收和解读方式，导致沟通中的障碍或噪音。', '', 'https://i.imgur.com/oRE4bHB.png', '2018-09-23 20:30:31');
-INSERT INTO `t_charts_info` VALUES ('52', '图11-4', '风险分解结构（RBS）示例', '406', '风险类别，通常借助风险分解结构 (RBS)来构建风险类别。', '', 'https://i.imgur.com/xDOJ9PS.png', '2018-09-23 20:31:41');
-INSERT INTO `t_charts_info` VALUES ('53', '图11-5', '概率和影响矩阵示例（有评分方法）', '408', '概率和影响矩阵的示例，其中也有数值风险评分的可能方法。', '概率和影响可以用描述性术语（如很高、高、中、低和很低）或数值来表达。', 'https://i.imgur.com/e2E7o5t.png', '2018-09-23 20:32:35');
-INSERT INTO `t_charts_info` VALUES ('54', '图11-10', '列出可监测性、邻近性和影响值的气泡图示例', '426', '层级图，通过两个以上的参数对风险进行分类。气泡图能显示三维数据。气泡图的示例，其中，X轴代表可监测性，Y轴代表邻近性，影响值则以气泡大小表示。', '', 'https://i.imgur.com/MDWbdNt.png', '2018-09-23 20:34:45');
-INSERT INTO `t_charts_info` VALUES ('55', '图11-13', '定量成本风险分析 S 曲线示例', '433', '定量风险分析中模拟技术中的蒙特卡洛成本风险分析所得到的 S 曲线示例。', '', 'https://i.imgur.com/cJrMZbd.png', '2018-09-23 20:35:38');
-INSERT INTO `t_charts_info` VALUES ('56', '图11-14', '龙卷风图示例', '434', '定量风险分析中模拟技术中的敏感性分析的结果通常用龙卷风图来表示。', '', 'https://i.imgur.com/IR9g8np.png', '2018-09-23 20:36:43');
-INSERT INTO `t_charts_info` VALUES ('57', '图11-15', '决策树示例', '435', '定量风险分析中模拟技术中的决策树分析。用决策树在若干备选行动方案中选择一个最佳方案。', '', 'https://i.imgur.com/GutJuKu.png', '2018-09-23 20:38:17');
-INSERT INTO `t_charts_info` VALUES ('58', '图13-6', '相关方参与度评估矩阵', '522', '相关方参与度评估矩阵用于将相关方当前参与水平与期望参与水平进行比较。相关方参与水平可分为如下：不了解型、抵制型、中立型、支持行、领导型。', '', 'https://i.imgur.com/CrBCJX2.png', '2018-09-23 20:39:53');
-INSERT INTO `t_charts_info` VALUES ('59', '图21-1', '项目组合、项目集与项目管理间的关系示例', '544', '组织战略与优先级相关联，项目组合与项目集之间、项目组合和项目之间以及项目集与单个项目之间都存在联系。', '', 'https://i.imgur.com/VwqQvEv.png', '2018-09-23 20:41:36');
-INSERT INTO `t_charts_info` VALUES ('60', '图21-2', '项目生命周期的通用结构', '548', '典型项目都呈现下列项目生命周期结构：开始项目、组织与准备、执行项目工作、结束项目。', '', 'https://i.imgur.com/5fEN1Wn.png', '2018-09-23 20:43:08');
-INSERT INTO `t_charts_info` VALUES ('61', '图21-3', '随时间而变化的变量影响', '549', '通用的生命周期结构一般具有以下三个特征：1. 成本与人力投入在开始时较低，在工作执行期间逐渐增加，并在项目快要结束时迅速回落；2. 在项目的整个生命周期中，随着决策的制定与可交付成果的验收，风险会逐步降低；3.做出变更和纠正错误的成本，通常会随着项目越来越接近完成而显著增高。', '', 'https://i.imgur.com/OFcQ1Gv.png', '2018-09-23 20:46:04');
-INSERT INTO `t_charts_info` VALUES ('62', '图21-4', '项目相关方示例', '551', '项目相关方的示例。', '', 'https://i.imgur.com/D45znLO.png', '2018-09-23 20:46:32');
-INSERT INTO `t_charts_info` VALUES ('63', '图21-5', '项目或阶段中的过程组相互作用示例', '555', '项目或阶段中的5大过程组相互作用。', '', 'https://i.imgur.com/Ds3iClc.png', '2018-09-23 20:47:02');
-INSERT INTO `t_charts_info` VALUES ('64', '图22-1', '项目边界', '562', '启动过程组时，项目边界，显示了项目发起人及商业文件与启动过程的关系。', '', 'https://i.imgur.com/GgbZHwC.png', '2018-09-23 20:49:20');
-INSERT INTO `t_charts_info` VALUES ('65', '图3X3-1', '项目生命周期的连续区间', '666', '预测型、迭代型、增量型、敏捷型项目生命周期之间连续性的区间关系。', '', 'https://i.imgur.com/L01yGQq.png', '2018-09-23 20:51:05');
-INSERT INTO `t_charts_info` VALUES ('66', '图3X3-2', '跨迭代周期的过程组重复开展所需的投入水平', '667', '重复开展项目管理过程组会产生管理费用。为了有效管理高度复杂且充满不确定性和变更的项目，这种管理费用是必要的。在基于迭代的各个阶段，所需的投入水平。', '', 'https://i.imgur.com/kRGcPbB.png', '2018-09-23 20:51:41');
-INSERT INTO `t_charts_info` VALUES ('67', '图3X3-3', '持续阶段中的过程组关系', '668', '持续性阶段（持续且适应式规划）与5大过程组相互作用。', '持续且适应式规划：高度适应型项目往往在整个项目生命周期内持续实施所有的项目管理过程组。它承认：工作一旦开始，计划就需根据新情况而改变。', 'https://i.imgur.com/daffKPi.png', '2018-09-23 20:56:02');
+INSERT INTO `t_charts_info` VALUES ('1', '表1-1', '促成项目创建的因素示例', '9', '展示了如何把影响项目启动背景的一些具体的因素归入一个或多个基本因素类别中。', '', 'https://i.imgur.com/SqPeY2y.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E8%A1%A81-1%E4%BF%83%E6%88%90%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E5%9B%A0%E7%B4%A0%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:56:56');
+INSERT INTO `t_charts_info` VALUES ('2', '表1-2', '项目、项目集、项目组合管理的比较概述', '13', '项目集和项目管理的重点在于以“正确”的方式开展项目集和项目；项目组合管理则注重于开展“正确”的项目集和项目。', '', 'https://i.imgur.com/OnqLDdR.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E8%A1%A81-2%E9%A1%B9%E7%9B%AE%E3%80%81%E9%A1%B9%E7%9B%AE%E9%9B%86%E3%80%81%E9%A1%B9%E7%9B%AE%E7%BB%84%E5%90%88%E7%AE%A1%E7%90%86%E7%9A%84%E6%AF%94%E8%BE%83%E6%A6%82%E8%BF%B0.png', '2020-05-25 05:57:00');
+INSERT INTO `t_charts_info` VALUES ('3', '表1-3', 'PMBOK® 指南关键组成部分的描述', '18', '简单描述了 PMBOK 第六版关键组成部分。', '', 'https://i.imgur.com/e5c4vMY.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E8%A1%A81-3PMBOK%C2%AE%20%E6%8C%87%E5%8D%97%E5%85%B3%E9%94%AE%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%E7%9A%84%E6%8F%8F%E8%BF%B0.png', '2020-05-25 05:57:04');
+INSERT INTO `t_charts_info` VALUES ('4', '表1-4', '项目管理过程组与知识领域', '25', '描述了5大过程组、10大知识领域、49个过程的对应关系。', '', 'https://i.imgur.com/8eYzhD3.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E8%A1%A81-4%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E8%BF%87%E7%A8%8B%E7%BB%84%E4%B8%8E%E7%9F%A5%E8%AF%86%E9%A2%86%E5%9F%9F.png', '2020-05-25 05:57:08');
+INSERT INTO `t_charts_info` VALUES ('5', '表1-5', '项目商业文件', '29', '在整个项目生命周期中，项目经理需要确保项目管理方法紧扣的商业文件包括的内容，以保证项目满足商业需求。', '', 'https://i.imgur.com/wP9scHJ.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E8%A1%A81-5%E9%A1%B9%E7%9B%AE%E5%95%86%E4%B8%9A%E6%96%87%E4%BB%B6.png', '2020-05-25 05:57:12');
+INSERT INTO `t_charts_info` VALUES ('6', '表2-1', '组织结构对项目的影响', '47', '组织结构的形式或类型是多种多样的。这个表比较了几种组织结构类型及其对项目的影响。', '', 'https://i.imgur.com/fc2c4pR.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E8%A1%A82-1%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84%E5%AF%B9%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%BD%B1%E5%93%8D.png', '2020-05-25 05:57:54');
+INSERT INTO `t_charts_info` VALUES ('7', '表3-1', '团队管理与团队领导力之比较', '64', '“管理”更接近于运用一系列已知的预期行为指示另一个人从一个位置到另一个位置。相反，“领导力”指通过讨论或辩论与他人合作，带领他们从一个位置到另一个位置。表从几个重\r\n要的层面对管理和领导力进行比较。', '', 'https://i.imgur.com/oHvNRiC.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E8%A1%A83-1%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86%E4%B8%8E%E5%9B%A2%E9%98%9F%E9%A2%86%E5%AF%BC%E5%8A%9B%E4%B9%8B%E6%AF%94%E8%BE%83.png', '2020-05-25 05:58:02');
+INSERT INTO `t_charts_info` VALUES ('8', '表4-1', '项目管理计划和项目文件', '89', '18个项目管理计划和33个项目文件的内容。需要记住的是：项目文件中，没有采购相关的文件，如协议与采购文档。采购一般由组织的采购部门负责。', '', 'https://i.imgur.com/xHQzFON.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E8%A1%A84-1%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E8%AE%A1%E5%88%92%E5%92%8C%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6.png', '2020-05-25 05:58:07');
+INSERT INTO `t_charts_info` VALUES ('9', '表5-1', '项目章程与项目范围说明书的内容', '155', '项目章程和项目范围说明书的内容存在一定程度的重叠，但它们的详细程度完全不同。项目章程包含高层级的信息，而项目范围说明书则是对范围组成部分的详细描述，这些组成部分需要在项目过程中渐进明细。表显示了这两个文件的一些关键内容。', '', 'https://i.imgur.com/46X7CGS.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E8%A1%A85-1%E9%A1%B9%E7%9B%AE%E7%AB%A0%E7%A8%8B%E4%B8%8E%E9%A1%B9%E7%9B%AE%E8%8C%83%E5%9B%B4%E8%AF%B4%E6%98%8E%E4%B9%A6%E7%9A%84%E5%86%85%E5%AE%B9.png', '2020-05-25 05:58:11');
+INSERT INTO `t_charts_info` VALUES ('10', '表7-1', '挣值计算汇总表', '267', '挣值分析 (EVA)。挣值分析将实际进度和成本绩效与绩效测量基准进行比较。EVM把范围基准、成本基准和进度基准整合起来，形成绩效测量基准。它针对每个工作包和控制账户，计算并监测以下三个关键指标：PV，计划价值；EV，挣值；AC，实际成本。', '挣值管理常用公式（PV，计划价值；EV，挣值；AC，实际成本）：\r\n1. SV  = EV-PV，SV，进度偏差：SV=0，按进度计划进行；SV>0，比进度计划提前；SV<0，比进度计划滞后。\r\n2. SPI = EV/PV，CV，成本偏差：CV=0，按计划成本完成；CV>0，低于计划成本；CV<0，超过计划成本。\r\n3. CV  = EV-AC，SPI，进度绩效指数：SPI=1，进度与计划相符；SPI>1，进度超前；SPI<1，进度落后。\r\n4. CPI = EV/AC，CPI，成本绩效指数：CPI=1', 'https://i.imgur.com/cL2CVvB.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E8%A1%A87-1%E6%8C%A3%E5%80%BC%E8%AE%A1%E7%AE%97%E6%B1%87%E6%80%BB%E8%A1%A8.png', '2020-05-25 05:58:44');
+INSERT INTO `t_charts_info` VALUES ('11', '表11-1', '概率和影响定义示例', '407', '针对三个项目目标提供了概率和影响定义的示例。', '定概率和影响级别的数量，更多级别（通常为五级）对应于更详细的风险管理方法，更少级别（通常为三级）对应于更简单的方法。', 'https://i.imgur.com/wChaPhj.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E8%A1%A811-1%E6%A6%82%E7%8E%87%E5%92%8C%E5%BD%B1%E5%93%8D%E5%AE%9A%E4%B9%89%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:58:49');
+INSERT INTO `t_charts_info` VALUES ('12', '表12-1', '采购文件比较', '481', '列出了采购中常用的文件类型及其部分内容。（采购文件，也就是采购文档）', '鉴于采购的法律性质，不应把次表的内容看成规定性描述，而只应该把它们看成关于所需文件的类型和内容的总体大纲，用于指导实施采购工作。组织、环境和法律规定会决定项目具体需要的文件类型和内容。', 'https://i.imgur.com/QysN2EK.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E8%A1%A812-1%E9%87%87%E8%B4%AD%E6%96%87%E4%BB%B6%E6%AF%94%E8%BE%83.png', '2020-05-25 05:58:53');
+INSERT INTO `t_charts_info` VALUES ('13', '图1-1', '组织通过项目进行状态转换', '6', '从商业角度来看，项目旨在推动组织从一个状态转到另一个状态，从而达成特定目标。', '', 'https://i.imgur.com/TPHSrsU.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE1-1%E7%BB%84%E7%BB%87%E9%80%9A%E8%BF%87%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2.png', '2020-05-25 05:39:07');
+INSERT INTO `t_charts_info` VALUES ('14', '图1-2', '项目启动背景', '8', '项目启动背景大致分为四类：1. 符合法规、法律或社会要求；2. 满足相关方的要求或需求；3. 执行、变更业务或技术战略；4. 创造、改进或修复产品、过程或服务。', '', 'https://i.imgur.com/uHeSwFl.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE1-2%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8%E8%83%8C%E6%99%AF.png', '2020-05-25 05:39:26');
+INSERT INTO `t_charts_info` VALUES ('15', '图1-3', '项目组合、项目集、项目和运营', '12', '展示了项目组合、项目集、项目和运营在特定情况下如何关联的。', '切记：项目集不包括运营活动。', 'https://i.imgur.com/D8mId2Z.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE1-3%E9%A1%B9%E7%9B%AE%E7%BB%84%E5%90%88%E3%80%81%E9%A1%B9%E7%9B%AE%E9%9B%86%E3%80%81%E9%A1%B9%E7%9B%AE%E5%92%8C%E8%BF%90%E8%90%A5.png', '2020-05-25 05:39:43');
+INSERT INTO `t_charts_info` VALUES ('16', '图1-4', '组织项目管理', '17', '展示了战略、项目组合、项目集、项目和运营相互作用的组织环境。', '应用组织级项目管理 (OPM)：指为实现战略目标而整合项目组合、项目集和项目管理与组织驱动因素的框架。', 'https://i.imgur.com/mrYhiKo.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE1-4%E7%BB%84%E7%BB%87%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86.png', '2020-05-25 05:40:05');
+INSERT INTO `t_charts_info` VALUES ('17', '图1-5', 'PMBOK® 指南关键组成部分在项目中的相互关系', '18', '项目生命周期、5大过程组、10大知识领域在项目中的对应关系。', '', 'https://i.imgur.com/pxZt3R3.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE1-5PMBOK%C2%AE%20%E6%8C%87%E5%8D%97%E5%85%B3%E9%94%AE%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%9B%B8%E4%BA%92%E5%85%B3%E7%B3%BB.p', '2020-05-25 05:40:26');
+INSERT INTO `t_charts_info` VALUES ('18', '图1-6', '过程示例：输入、工具与技术和输出', '22', '49个过程的ITTO样例，说明了一个过程的输入、工具、技术和输出的关系以及与其他过程的关系。', '', 'https://i.imgur.com/LkONyAQ.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE1-6%E8%BF%87%E7%A8%8B%E7%A4%BA%E4%BE%8B%EF%BC%9A%E8%BE%93%E5%85%A5%E3%80%81%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E6%9C%AF%E5%92%8C%E8%BE%93%E5%87%BA.png', '2020-05-25 05:40:39');
+INSERT INTO `t_charts_info` VALUES ('19', '图1-7', '项目数据、信息和报告流向', '27', '项目工作绩效数据、绩效信息信息和绩效信息报告在项目中的流转。', '', 'https://i.imgur.com/K8fvKkL.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE1-7%E9%A1%B9%E7%9B%AE%E6%95%B0%E6%8D%AE%E3%80%81%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8A%A5%E5%91%8A%E6%B5%81%E5%90%91.png', '2020-05-25 05:40:55');
+INSERT INTO `t_charts_info` VALUES ('20', '图1-8', '需求评估与关键业务/项目文件的相互关系', '30', '需求评估与五大过程组、项目文件（商业论证、项目章程和项目管理计划）的相互流转关系。', '', 'https://i.imgur.com/UTulClX.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE1-8%E9%9C%80%E6%B1%82%E8%AF%84%E4%BC%B0%E4%B8%8E%E5%85%B3%E9%94%AE%E4%B8%9A%E5%8A%A1%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%B8%E4%BA%92%E5%85%B3%E7%B3%BB.png', '2020-05-25 05:41:13');
+INSERT INTO `t_charts_info` VALUES ('21', '图2-1', '项目影响', '37', '项目的开展如何通过组织过程资产和事业环境因素去影响公司战略的。', '', 'https://i.imgur.com/UwvrKbE.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE2-1%E9%A1%B9%E7%9B%AE%E5%BD%B1%E5%93%8D.png', '2020-05-25 05:41:45');
+INSERT INTO `t_charts_info` VALUES ('22', '图3-1', '项目经理的影响力范围示例', '53', '项目经理影响力的范围是涉及项目的所有相关方的，这个图也就是项目相关方的图。', '', 'https://i.imgur.com/ByFB9wS.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE3-1%E9%A1%B9%E7%9B%AE%E7%BB%8F%E7%90%86%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8A%9B%E8%8C%83%E5%9B%B4%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:42:08');
+INSERT INTO `t_charts_info` VALUES ('23', '图3-2', 'PMI 人才三角®', '57', '项目经理的人才技能需求，人才三角重点关注三个关键技能组合：技术项目管理、领导力、战略和商务管理。', '人才三角重点关注三个关键技能组合：\r\n1. 技术项目管理。与项目、项目集和项目组合管理特定领域相关的知识、技能和行为，即角色履行的技术方面。\r\n2. 领导力。指导、激励和带领团队所需的知识、技能和行为，可帮助组织达成商业目标。\r\n3. 战略和商务管理。关于行业和组织的知识和专业技能，有助于提高绩效并取得更好的业务成果。', 'https://i.imgur.com/jQ3TF0w.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE3-2PMI%20%E4%BA%BA%E6%89%8D%E4%B8%89%E8%A7%92%C2%AE.png', '2020-05-25 05:42:25');
+INSERT INTO `t_charts_info` VALUES ('24', '图5-6', '系统交互图', '146', '系统交互图是范围模型的一个例子，它是对产品范围的可视化描绘，显示业务系统（过程、设备、计算机系统等）及其与人和其他系统（行动者）之间的交互方式。', '系统交互图显示了业务系统的输入、输入提供者、业务系统的输出和输出接收者。', 'https://i.imgur.com/Q6PUqE2.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE5-6%E7%B3%BB%E7%BB%9F%E4%BA%A4%E4%BA%92%E5%9B%BE.png', '2020-05-25 05:42:53');
+INSERT INTO `t_charts_info` VALUES ('25', '图5-7', '需求跟踪矩阵示例', '149', '需求跟踪矩阵示例，其中列有相关的需求属性。', '需求跟踪矩阵是描述一个需求从产生到完成的过程，是需求溯源和跟踪的依据。', 'https://i.imgur.com/m52AX3A.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE5-7%E9%9C%80%E6%B1%82%E8%B7%9F%E8%B8%AA%E7%9F%A9%E9%98%B5%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:43:16');
+INSERT INTO `t_charts_info` VALUES ('26', '图5-12', '分解到工作包的WBS 示例', '158', 'WBS示例：显示了某工作分解结构的一部分，其中若干分支已经向下分解到工作包层次。', '', 'https://i.imgur.com/LYbgddg.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE5-12%E5%88%86%E8%A7%A3%E5%88%B0%E5%B7%A5%E4%BD%9C%E5%8C%85%E7%9A%84WBS%20%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:44:03');
+INSERT INTO `t_charts_info` VALUES ('27', '图5-13', 'WBS 示例：以阶段作为第二层', '159', 'WBS示例：u以项目生命周期的各阶段作为分解的第二层，把产品和项目可交付成果放在第三层。', '', 'https://i.imgur.com/2Mtn5QD.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE5-13WBS%20%E7%A4%BA%E4%BE%8B%EF%BC%9A%E4%BB%A5%E9%98%B6%E6%AE%B5%E4%BD%9C%E4%B8%BA%E7%AC%AC%E4%BA%8C%E5%B1%82.png', '2020-05-25 05:44:24');
+INSERT INTO `t_charts_info` VALUES ('28', '图5-14', 'WBS 示例：以主要可交付成果作为第二层', '160', 'WBS示例：以主要可交付成果作为分解的第二层。', '', 'https://i.imgur.com/4ToIMWS.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE5-14WBS%20%E7%A4%BA%E4%BE%8B%EF%BC%9A%E4%BB%A5%E4%B8%BB%E8%A6%81%E5%8F%AF%E4%BA%A4%E4%BB%98%E6%88%90%E6%9E%9C%E4%BD%9C%E4%B8%BA%E7%AC%AC%E4%BA%8C%E5%B1%82.png', '2020-05-25 05:44:46');
+INSERT INTO `t_charts_info` VALUES ('29', '图6-2', '进度规划工作概述', '176', '进度计划工作的概览，展示如何结合进度计划编制方法、编制工具及项目进度管理各过程的输出来创建进度模型。', '', 'https://i.imgur.com/cAGqogF.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE6-2%E8%BF%9B%E5%BA%A6%E8%A7%84%E5%88%92%E5%B7%A5%E4%BD%9C%E6%A6%82%E8%BF%B0.png', '2020-05-25 05:45:11');
+INSERT INTO `t_charts_info` VALUES ('30', '图6-9', '紧前关系绘图法（PDM）的活动关系类型', '190', '紧前关系绘图法（PDM）的活动关系类型：完成到开始（FS）、完成到完成（FF）、开始到开始（SS）、开始到完成（SF）。', '', 'https://i.imgur.com/BcR1nIM.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE6-9%E7%B4%A7%E5%89%8D%E5%85%B3%E7%B3%BB%E7%BB%98%E5%9B%BE%E6%B3%95%EF%BC%88PDM%EF%BC%89%E7%9A%84%E6%B4%BB%E5%8A%A8%E5%85%B3%E7%B3%BB%E7%B1%BB%E5%9E%8B.png', '2020-05-25 05:45:32');
+INSERT INTO `t_charts_info` VALUES ('31', '图6-10', '提前量和滞后量示例', '192', '提前量和滞后量：提前量是相对于紧前活动，紧后活动可以提前的时间量；滞后量是相对于紧前活动，紧后活动需要推迟的时间量。', '', 'https://i.imgur.com/avUdC2A.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE6-10%E6%8F%90%E5%89%8D%E9%87%8F%E5%92%8C%E6%BB%9E%E5%90%8E%E9%87%8F%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:45:46');
+INSERT INTO `t_charts_info` VALUES ('32', '图6-11', '项目进度网络图', '193', '项目进度网络图是表示项目进度活动之间的逻辑关系（也叫依赖关系）的图形。', '', 'https://i.imgur.com/xiiLYI8.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE6-11%E9%A1%B9%E7%9B%AE%E8%BF%9B%E5%BA%A6%E7%BD%91%E7%BB%9C%E5%9B%BE.png', '2020-05-25 05:46:01');
+INSERT INTO `t_charts_info` VALUES ('33', '图6-16', '关键路径法示例', '211', '关键路径法是在不考虑任何资源限制的情况下对估算出的项目最短工期。', '', 'https://i.imgur.com/ek851DQ.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE6-16%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84%E6%B3%95%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:46:16');
+INSERT INTO `t_charts_info` VALUES ('34', '图6-17', '资源平衡', '212', '资源平衡，为了在资源需求与资源供给之间取得平衡，根据资源制约因素对开始日期和完成日期进行调整的一种技术，通常改变关键路径。', '', 'https://i.imgur.com/58KNE3l.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE6-17%E8%B5%84%E6%BA%90%E5%B9%B3%E8%A1%A1.png', '2020-05-25 05:46:32');
+INSERT INTO `t_charts_info` VALUES ('35', '图6-18', '目标里程碑的概率分布示例', '214', '显示了一个项目的概率分布，表明实现特定目标日期（即项目完成日期）的可能性。在这个例子中，项目按时或在目标日期，即 5 月 13 日之前完成的概率是 10%，而在 5 月 28 日之前完成的概率是 90%。', '', 'https://i.imgur.com/tDyTqq2.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE6-18%E7%9B%AE%E6%A0%87%E9%87%8C%E7%A8%8B%E7%A2%91%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:47:14');
+INSERT INTO `t_charts_info` VALUES ('36', '图6-19', '进度压缩技术的比较', '215', '比较了多个进度压缩技术。', '进度压缩技术是指在不缩减项目范围的前提下，缩短或加快进度工期。包括赶工和快速跟进。', 'https://i.imgur.com/qpWn49Y.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE6-19%E8%BF%9B%E5%BA%A6%E5%8E%8B%E7%BC%A9%E6%8A%80%E6%9C%AF%E7%9A%84%E6%AF%94%E8%BE%83.png', '2020-05-25 05:47:32');
+INSERT INTO `t_charts_info` VALUES ('37', '图6-20', '产品愿景、发布规划和迭代计划之间的关系', '216', '敏捷发布规划下，产品愿景、产品路线图、发布规划和迭代计划之间的关系。', '', 'https://i.imgur.com/B2jgnCv.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE6-20%E4%BA%A7%E5%93%81%E6%84%BF%E6%99%AF%E3%80%81%E5%8F%91%E5%B8%83%E8%A7%84%E5%88%92%E5%92%8C%E8%BF%AD%E4%BB%A3%E8%AE%A1%E5%88%92%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3', '2020-05-25 05:47:45');
+INSERT INTO `t_charts_info` VALUES ('38', '图6-21', '项目进度计划示例', '219', '一个正在执行的示例项目的进度计划，工作进展是通过截止日期或状态日期表示的，包括：里程碑进度计划，横道图，进度关联横道图。', '', 'https://i.imgur.com/lEJIQTf.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE6-21%E9%A1%B9%E7%9B%AE%E8%BF%9B%E5%BA%A6%E8%AE%A1%E5%88%92%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:48:03');
+INSERT INTO `t_charts_info` VALUES ('39', '图6-24', '迭代燃尽图', '226', '迭代燃尽图，这类图用于追踪迭代未完项中尚待完成的工作。它基于迭代规划中确定的工作，分析与理想燃尽图的偏差。可使用预测趋势线来预测迭代结束时可能出现的偏差，以及在迭代期间应该采取的合理行动。', '', 'https://i.imgur.com/8BIBSB9.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE6-24%E8%BF%AD%E4%BB%A3%E7%87%83%E5%B0%BD%E5%9B%BE.png', '2020-05-25 05:48:19');
+INSERT INTO `t_charts_info` VALUES ('40', '图7-8', '项目预算的组成', '255', '预算 = 管理储备 + 成本基准	= 管理储备 + 控制账户	= 管理储备 + （应急储备 + 工作包成本估算 ）	= 管理储备 + （应急储备 + （活动应急储备 + 活动成本估算））。', '', 'https://i.imgur.com/57WduV0.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE7-8%E9%A1%B9%E7%9B%AE%E9%A2%84%E7%AE%97%E7%9A%84%E7%BB%84%E6%88%90.png', '2020-05-25 05:48:40');
+INSERT INTO `t_charts_info` VALUES ('41', '图7-9', '成本基准、支出与资金需求', '255', '展示由于成本基准中的成本估算与进度活动直接关联，可按时间段分配成本基准，得到一条 S 曲线。对于使用挣值管理的项目，成本基准指的是绩效测量基准。', '', 'https://i.imgur.com/zFTgarz.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE7-9%E6%88%90%E6%9C%AC%E5%9F%BA%E5%87%86%E3%80%81%E6%94%AF%E5%87%BA%E4%B8%8E%E8%B5%84%E9%87%91%E9%9C%80%E6%B1%82.png', '2020-05-25 05:48:57');
+INSERT INTO `t_charts_info` VALUES ('42', '图7-12', '挣值、计划价值和实际成本', '264', '以 S 曲线展示了某个项目的 EV 数据，该项目预算超支且进度落后。', '在挣值分析中，对计划价值、挣值和实际成本这三个参数，既可以分阶段（通常以周或月为单位）进行监督和报告，也可以针对累计值进行监督和报告。', 'https://i.imgur.com/tNmCMyi.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE7-12%E6%8C%A3%E5%80%BC%E3%80%81%E8%AE%A1%E5%88%92%E4%BB%B7%E5%80%BC%E5%92%8C%E5%AE%9E%E9%99%85%E6%88%90%E6%9C%AC.png', '2020-05-25 05:49:17');
+INSERT INTO `t_charts_info` VALUES ('43', '图7-13', '完工尚需绩效指数（TCPI）', '268', '完工尚需绩效指数（TCPI）是一种为了实现特定的管理目标，剩余资源的使用必须达到的成本绩效指标，是完成剩余工作所需的成本与剩余预算之比', 'TCPI，其计算公式在图的左下角，用剩余工作（BAC 减去 EV）除以剩余资金（可以是 BAC 减去 AC，或 EAC 减去 AC）。', 'https://i.imgur.com/IBVCv9E.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE7-13%E5%AE%8C%E5%B7%A5%E5%B0%9A%E9%9C%80%E7%BB%A9%E6%95%88%E6%8C%87%E6%95%B0%EF%BC%88TCPI%EF%BC%89.png', '2020-05-25 05:49:34');
+INSERT INTO `t_charts_info` VALUES ('44', '图8-2', '主要项目质量管理过程的相互关系', '273', '概述了项目质量管理过程的主要输入和输出以及这些过程在项目质量管理知识领域中的相互关系。', '', 'https://i.imgur.com/3lYlAEr.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE8-2%E4%B8%BB%E8%A6%81%E9%A1%B9%E7%9B%AE%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86%E8%BF%87%E7%A8%8B%E7%9A%84%E7%9B%B8%E4%BA%92%E5%85%B3%E7%B3%BB.png', '2020-05-25 05:49:57');
+INSERT INTO `t_charts_info` VALUES ('45', '图8-5', '质量成本', '283', '质量成本 (COQ) 包括在产品生命周期中为预防不符合要求、为评价产品或服务是否符合要求，以及因未达到要求（返工）而发生的所有成本。失败成本通常分为内部（项目团队发现的）和外部（客户发现的）两类。', '', 'https://i.imgur.com/1TdqX8A.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE8-5%E8%B4%A8%E9%87%8F%E6%88%90%E6%9C%AC.png', '2020-05-25 05:50:11');
+INSERT INTO `t_charts_info` VALUES ('46', '图8-6', 'SIPOC 模型', '285', '展示了其中一个版本的价值链，即 SIPOC（供应商、输入、过程、输出和客户）模型。', '流程图可能有助于了解和估算一个过程的质量成本。', 'https://i.imgur.com/K8ZwlXy.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE8-6SIPOC%20%E6%A8%A1%E5%9E%8B.png', '2020-05-25 05:50:27');
+INSERT INTO `t_charts_info` VALUES ('47', '图8-9', '因果图', '294', '因果图，又称“鱼骨图”、“why-why分析图”和“石川图”，将问题陈述的原因分解为离散的分支，有助于识别问题的主要原因或根本原因。', '', 'https://i.imgur.com/vZQsdt9.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE8-9%E5%9B%A0%E6%9E%9C%E5%9B%BE.png', '2020-05-25 05:50:42');
+INSERT INTO `t_charts_info` VALUES ('48', '图8-12', '核查表', '302', '在开展检查以识别缺陷时，用核查表收集属性数据就特别方便，例如关于缺陷数量或后果的数据。', '核查表，又称计数表，用于合理排列各种事项，以便有效地收集关于潜在质量问题的有用数据。', 'https://i.imgur.com/QBdUdAj.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE8-12%E6%A0%B8%E6%9F%A5%E8%A1%A8.png', '2020-05-25 05:51:00');
+INSERT INTO `t_charts_info` VALUES ('49', '图9-4', 'RACI 矩阵示例', '317', '责任分配矩阵的一个具体形式：RACI，以确保任何一项任务都只有一个人负责，从而避免职权不清。', 'RACI（执行、负责、咨询和知情）：A更好的翻译是负责，R是执行或响应。一个活动只有1个A。', 'https://i.imgur.com/ZUdj2Gp.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE9-4RACI%20%E7%9F%A9%E9%98%B5%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:51:30');
+INSERT INTO `t_charts_info` VALUES ('50', '图9-7', '资源分解结构示例', '327', '资源分解结构是资源依类别和类型的层级展现。', '', 'https://i.imgur.com/VpJqAog.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE9-7%E8%B5%84%E6%BA%90%E5%88%86%E8%A7%A3%E7%BB%93%E6%9E%84%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:51:42');
+INSERT INTO `t_charts_info` VALUES ('51', '图10-4', '适用于跨文化沟通的沟通模型', '373', '沟通模型示例，展示了发送方的当前情绪、知识、背景、个性、文化和偏见会如何影响信息本身及其传递方式。类似地，接收方的当前情绪、知识、背景、个性、文化和偏见也会影响信息的接收和解读方式，导致沟通中的障碍或噪音。', '', 'https://i.imgur.com/oRE4bHB.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE10-4%E9%80%82%E7%94%A8%E4%BA%8E%E8%B7%A8%E6%96%87%E5%8C%96%E6%B2%9F%E9%80%9A%E7%9A%84%E6%B2%9F%E9%80%9A%E6%A8%A1%E5%9E%8B.png', '2020-05-25 05:52:06');
+INSERT INTO `t_charts_info` VALUES ('52', '图11-4', '风险分解结构（RBS）示例', '406', '风险类别，通常借助风险分解结构 (RBS)来构建风险类别。', '', 'https://i.imgur.com/xDOJ9PS.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE11-4%E9%A3%8E%E9%99%A9%E5%88%86%E8%A7%A3%E7%BB%93%E6%9E%84%EF%BC%88RBS%EF%BC%89%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:52:22');
+INSERT INTO `t_charts_info` VALUES ('53', '图11-5', '概率和影响矩阵示例（有评分方法）', '408', '概率和影响矩阵的示例，其中也有数值风险评分的可能方法。', '概率和影响可以用描述性术语（如很高、高、中、低和很低）或数值来表达。', 'https://i.imgur.com/e2E7o5t.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE11-5%E6%A6%82%E7%8E%87%E5%92%8C%E5%BD%B1%E5%93%8D%E7%9F%A9%E9%98%B5%E7%A4%BA%E4%BE%8B%EF%BC%88%E6%9C%89%E8%AF%84%E5%88%86%E6%96%B9%E6%B3%95%EF%BC%89.png', '2020-05-25 05:52:41');
+INSERT INTO `t_charts_info` VALUES ('54', '图11-10', '列出可监测性、邻近性和影响值的气泡图示例', '426', '层级图，通过两个以上的参数对风险进行分类。气泡图能显示三维数据。气泡图的示例，其中，X轴代表可监测性，Y轴代表邻近性，影响值则以气泡大小表示。', '', 'https://i.imgur.com/MDWbdNt.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE11-10%E5%88%97%E5%87%BA%E5%8F%AF%E7%9B%91%E6%B5%8B%E6%80%A7%E3%80%81%E9%82%BB%E8%BF%91%E6%80%A7%E5%92%8C%E5%BD%B1%E5%93%8D%E5%80%BC%E7%9A%84%E6%B0%94%E6%B3%A1%E5%9B%BE%E7%A', '2020-05-25 05:52:56');
+INSERT INTO `t_charts_info` VALUES ('55', '图11-13', '定量成本风险分析 S 曲线示例', '433', '定量风险分析中模拟技术中的蒙特卡洛成本风险分析所得到的 S 曲线示例。', '', 'https://i.imgur.com/cJrMZbd.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE11-13%E5%AE%9A%E9%87%8F%E6%88%90%E6%9C%AC%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90%20S%20%E6%9B%B2%E7%BA%BF%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:53:14');
+INSERT INTO `t_charts_info` VALUES ('56', '图11-14', '龙卷风图示例', '434', '定量风险分析中模拟技术中的敏感性分析的结果通常用龙卷风图来表示。', '', 'https://i.imgur.com/IR9g8np.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE11-4%E9%A3%8E%E9%99%A9%E5%88%86%E8%A7%A3%E7%BB%93%E6%9E%84%EF%BC%88RBS%EF%BC%89%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:53:34');
+INSERT INTO `t_charts_info` VALUES ('57', '图11-15', '决策树示例', '435', '定量风险分析中模拟技术中的决策树分析。用决策树在若干备选行动方案中选择一个最佳方案。', '', 'https://i.imgur.com/GutJuKu.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE11-5%E6%A6%82%E7%8E%87%E5%92%8C%E5%BD%B1%E5%93%8D%E7%9F%A9%E9%98%B5%E7%A4%BA%E4%BE%8B%EF%BC%88%E6%9C%89%E8%AF%84%E5%88%86%E6%96%B9%E6%B3%95%EF%BC%89.png', '2020-05-25 05:53:39');
+INSERT INTO `t_charts_info` VALUES ('58', '图13-6', '相关方参与度评估矩阵', '522', '相关方参与度评估矩阵用于将相关方当前参与水平与期望参与水平进行比较。相关方参与水平可分为如下：不了解型、抵制型、中立型、支持行、领导型。', '', 'https://i.imgur.com/CrBCJX2.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE13-6%E7%9B%B8%E5%85%B3%E6%96%B9%E5%8F%82%E4%B8%8E%E5%BA%A6%E8%AF%84%E4%BC%B0%E7%9F%A9%E9%98%B5.png', '2020-05-25 05:53:59');
+INSERT INTO `t_charts_info` VALUES ('59', '图21-1', '项目组合、项目集与项目管理间的关系示例', '544', '组织战略与优先级相关联，项目组合与项目集之间、项目组合和项目之间以及项目集与单个项目之间都存在联系。', '', 'https://i.imgur.com/VwqQvEv.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE21-1%E9%A1%B9%E7%9B%AE%E7%BB%84%E5%90%88%E3%80%81%E9%A1%B9%E7%9B%AE%E9%9B%86%E4%B8%8E%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E7%A4%BA%E4%BE', '2020-05-25 05:54:48');
+INSERT INTO `t_charts_info` VALUES ('60', '图21-2', '项目生命周期的通用结构', '548', '典型项目都呈现下列项目生命周期结构：开始项目、组织与准备、执行项目工作、结束项目。', '', 'https://i.imgur.com/5fEN1Wn.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE21-2%E9%A1%B9%E7%9B%AE%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E9%80%9A%E7%94%A8%E7%BB%93%E6%9E%84.png', '2020-05-25 05:54:55');
+INSERT INTO `t_charts_info` VALUES ('61', '图21-3', '随时间而变化的变量影响', '549', '通用的生命周期结构一般具有以下三个特征：1. 成本与人力投入在开始时较低，在工作执行期间逐渐增加，并在项目快要结束时迅速回落；2. 在项目的整个生命周期中，随着决策的制定与可交付成果的验收，风险会逐步降低；3.做出变更和纠正错误的成本，通常会随着项目越来越接近完成而显著增高。', '', 'https://i.imgur.com/OFcQ1Gv.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE21-3%E9%9A%8F%E6%97%B6%E9%97%B4%E8%80%8C%E5%8F%98%E5%8C%96%E7%9A%84%E5%8F%98%E9%87%8F%E5%BD%B1%E5%93%8D.png', '2020-05-25 05:55:00');
+INSERT INTO `t_charts_info` VALUES ('62', '图21-4', '项目相关方示例', '551', '项目相关方的示例。', '', 'https://i.imgur.com/D45znLO.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE21-4%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%96%B9%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:55:06');
+INSERT INTO `t_charts_info` VALUES ('63', '图21-5', '项目或阶段中的过程组相互作用示例', '555', '项目或阶段中的5大过程组相互作用。', '', 'https://i.imgur.com/Ds3iClc.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE21-5%E9%A1%B9%E7%9B%AE%E6%88%96%E9%98%B6%E6%AE%B5%E4%B8%AD%E7%9A%84%E8%BF%87%E7%A8%8B%E7%BB%84%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%A4%BA%E4%BE%8B.png', '2020-05-25 05:55:10');
+INSERT INTO `t_charts_info` VALUES ('64', '图22-1', '项目边界', '562', '启动过程组时，项目边界，显示了项目发起人及商业文件与启动过程的关系。', '', 'https://i.imgur.com/GgbZHwC.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE22-1%E9%A1%B9%E7%9B%AE%E8%BE%B9%E7%95%8C.png', '2020-05-25 05:55:49');
+INSERT INTO `t_charts_info` VALUES ('65', '图3X3-1', '项目生命周期的连续区间', '666', '预测型、迭代型、增量型、敏捷型项目生命周期之间连续性的区间关系。', '', 'https://i.imgur.com/L01yGQq.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE3X3-1%E9%A1%B9%E7%9B%AE%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E8%BF%9E%E7%BB%AD%E5%8C%BA%E9%97%B4.png', '2020-05-25 05:55:53');
+INSERT INTO `t_charts_info` VALUES ('66', '图3X3-2', '跨迭代周期的过程组重复开展所需的投入水平', '667', '重复开展项目管理过程组会产生管理费用。为了有效管理高度复杂且充满不确定性和变更的项目，这种管理费用是必要的。在基于迭代的各个阶段，所需的投入水平。', '', 'https://i.imgur.com/kRGcPbB.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE3X3-2%E8%B7%A8%E8%BF%AD%E4%BB%A3%E5%91%A8%E6%9C%9F%E7%9A%84%E8%BF%87%E7%A8%8B%E7%BB%84%E9%87%8D%E5%A4%8D%E5%BC%80%E5%B1%95%E6%89%80%E9%9C%80%E7%9A%84%E6%8A%95%E5%85%A5%E6%B', '2020-05-25 05:55:57');
+INSERT INTO `t_charts_info` VALUES ('67', '图3X3-3', '持续阶段中的过程组关系', '668', '持续性阶段（持续且适应式规划）与5大过程组相互作用。', '持续且适应式规划：高度适应型项目往往在整个项目生命周期内持续实施所有的项目管理过程组。它承认：工作一旦开始，计划就需根据新情况而改变。', 'https://i.imgur.com/daffKPi.png', 'https://raw.githubusercontent.com/panshipmp/pmbok6th/master/pics/pmpcharts/%E5%9B%BE3X3-3%E6%8C%81%E7%BB%AD%E9%98%B6%E6%AE%B5%E4%B8%AD%E7%9A%84%E8%BF%87%E7%A8%8B%E7%BB%84%E5%85%B3%E7%B3%BB.png', '2020-05-25 05:56:02');
 
 -- ----------------------------
 -- Table structure for `t_concept_explain`
@@ -841,15 +842,15 @@ CREATE TABLE `t_file_category` (
   `file_category_extra_info` varchar(256) NOT NULL,
   PRIMARY KEY (`file_category_id`),
   UNIQUE KEY `key` (`file_category_name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_file_category
 -- ----------------------------
-INSERT INTO `t_file_category` VALUES ('0', '', '', '');
 INSERT INTO `t_file_category` VALUES ('1', '商业文件', '', '');
 INSERT INTO `t_file_category` VALUES ('2', '项目管理计划', '', '');
 INSERT INTO `t_file_category` VALUES ('3', '项目文件', '', '');
+INSERT INTO `t_file_category` VALUES ('4', '', '', '');
 
 -- ----------------------------
 -- Table structure for `t_others`
@@ -888,12 +889,11 @@ CREATE TABLE `t_porcess_inputs` (
   `input_extra_info` varchar(256) NOT NULL,
   PRIMARY KEY (`input_id`),
   UNIQUE KEY `name` (`input_name`,`input_operate`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_porcess_inputs
 -- ----------------------------
-INSERT INTO `t_porcess_inputs` VALUES ('0', '0', '', '', '', '');
 INSERT INTO `t_porcess_inputs` VALUES ('1', '0', '协议', '', '', '');
 INSERT INTO `t_porcess_inputs` VALUES ('2', '0', '事业环境因素', '', '', '');
 INSERT INTO `t_porcess_inputs` VALUES ('3', '0', '组织过程资产', '', '', '');
@@ -968,6 +968,7 @@ INSERT INTO `t_porcess_inputs` VALUES ('104', '3', '质量测量指标', '', '',
 INSERT INTO `t_porcess_inputs` VALUES ('106', '0', '变更请求', '', '批准的', '');
 INSERT INTO `t_porcess_inputs` VALUES ('111', '0', '团队绩效评价', '', '', '');
 INSERT INTO `t_porcess_inputs` VALUES ('112', '0', '卖方建议书', '', '', '');
+INSERT INTO `t_porcess_inputs` VALUES ('113', '0', '', '', '', '');
 
 -- ----------------------------
 -- Table structure for `t_porcess_itto`
@@ -1565,12 +1566,11 @@ CREATE TABLE `t_porcess_outputs` (
   `ontput_extra_info` varchar(256) NOT NULL,
   PRIMARY KEY (`output_id`),
   UNIQUE KEY `key` (`output_name`,`output_operate`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=191 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=192 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_porcess_outputs
 -- ----------------------------
-INSERT INTO `t_porcess_outputs` VALUES ('0', '0', '', '', '', '');
 INSERT INTO `t_porcess_outputs` VALUES ('1', '0', '项目章程', '', '', '');
 INSERT INTO `t_porcess_outputs` VALUES ('2', '3', '假设日志', '', '', '');
 INSERT INTO `t_porcess_outputs` VALUES ('3', '0', '项目管理计划', '', '', '');
@@ -1681,6 +1681,7 @@ INSERT INTO `t_porcess_outputs` VALUES ('187', '0', '协议', '', '', '');
 INSERT INTO `t_porcess_outputs` VALUES ('188', '0', '结束的采购', '', '', '');
 INSERT INTO `t_porcess_outputs` VALUES ('189', '0', '采购文档', '', '更新', '');
 INSERT INTO `t_porcess_outputs` VALUES ('190', '3', '质量测量指标', '', '', '');
+INSERT INTO `t_porcess_outputs` VALUES ('191', '0', '', '', '', '');
 
 -- ----------------------------
 -- Table structure for `t_porcess_tools`
@@ -1694,12 +1695,11 @@ CREATE TABLE `t_porcess_tools` (
   `tool_extra_info` varchar(256) NOT NULL,
   PRIMARY KEY (`tool_id`),
   UNIQUE KEY `key` (`tool_name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=158 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=159 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_porcess_tools
 -- ----------------------------
-INSERT INTO `t_porcess_tools` VALUES ('0', '0', '', '', '');
 INSERT INTO `t_porcess_tools` VALUES ('1', '0', '专家判断', '基于某应用领域、知识领域、学科和行业等的专业知识而做出的，关于当前活动的合理判断。这些专业知识可来自具有专业学历、知识、技能、经验或培训经历的任何小组或个人。', '相关专家根据经验进行判断。');
 INSERT INTO `t_porcess_tools` VALUES ('2', '1', '头脑风暴', '在短时间内获得大量创意，适用于团队环境，需要引导者进行引导。头脑风暴由两个部分构成：创意产生和创意分析。', '就一个主题广泛讨论产生需求并收集。');
 INSERT INTO `t_porcess_tools` VALUES ('3', '1', '焦点小组', '召集预定的相关方和主题专家，了解他们对所讨论的产品、服务或成果的期望和态度的一种启发式技术。', '通过专业的主题专家引导互动达成共识。');
@@ -1841,6 +1841,7 @@ INSERT INTO `t_porcess_tools` VALUES ('154', '1', '数据收集技术', '用于�
 INSERT INTO `t_porcess_tools` VALUES ('155', '5', '数据表现技术', '用于显示用来传递数据和信息的图形方式或其他方法。', '');
 INSERT INTO `t_porcess_tools` VALUES ('156', '6', '沟通技能', '用于在相关方之间传递信息。', '');
 INSERT INTO `t_porcess_tools` VALUES ('157', '2', '人际关系与团队技能', '用于有效地领导团队成员和其他相关方并与之进行互动。', '');
+INSERT INTO `t_porcess_tools` VALUES ('158', '0', '', '', '');
 
 -- ----------------------------
 -- Table structure for `t_project_files`
@@ -1941,15 +1942,15 @@ CREATE TABLE `t_tool_category` (
   `tool_category_extra_info` varchar(256) NOT NULL,
   PRIMARY KEY (`tool_category_id`),
   UNIQUE KEY `key` (`tool_category_name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_tool_category
 -- ----------------------------
-INSERT INTO `t_tool_category` VALUES ('0', '', '', '');
 INSERT INTO `t_tool_category` VALUES ('1', '数据收集技术', '', '');
 INSERT INTO `t_tool_category` VALUES ('2', '人际关系与团队技能', '', '');
 INSERT INTO `t_tool_category` VALUES ('3', '数据分析技术', '', '');
 INSERT INTO `t_tool_category` VALUES ('4', '决策技术', '', '');
 INSERT INTO `t_tool_category` VALUES ('5', '数据表现技术', '', '');
 INSERT INTO `t_tool_category` VALUES ('6', '沟通技能', '', '');
+INSERT INTO `t_tool_category` VALUES ('7', '', '', '');
