@@ -7,7 +7,13 @@
 加微信群二维码
 > <img src="/pics/README/001-磐石如丝微信二维码.png" width="140" height="140" align=center></img>
 
+
+### PMP 49 个过程一览
+#### [PMBOK49个过程简述](/PMBOK49个过程简述.md)
+#### [PMBOK49个过程一句话简述](/PMBOK49个过程一句话简述.html)
+
 ### 数据库涉及思路
+
 
 
 ### TODOLIST
